@@ -119,3 +119,5 @@ dist/
 # Ignore the frontend and backend build artifacts
 frontend/build/
 backend/dist/
+
+*.txt
