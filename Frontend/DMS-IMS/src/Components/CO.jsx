@@ -22,6 +22,13 @@ const CO = () => {
     setStudentModal(true);
   }
 
+  const calculatePercentage = (a, b, c) => {
+    let totalMarks = parseInt(a) + parseInt(b) + parseInt(c);
+    let totalPossibleMarks = 17; // Change this value if different
+    let percentage = (totalMarks * 100) / totalPossibleMarks;
+    return percentage.toFixed(2) + "%"; // Display percentage with 2 decimal places
+  }
+
   return (
     <>
       <Modal show={showStudentModal} onHide={() => setStudentModal(false)} centered>
@@ -144,60 +151,25 @@ const CO = () => {
                       <td>{co.rollNumber}</td>
                       <td>{co.branch}</td>
                       <td>{
-                        (() => {
-                          // Calculate the sum of marks
-                          const totalMarks = parseInt(co.marks.A._1a) + parseInt(co.marks.B._2a) + parseInt(co.marks.C._3);
-                          // Calculate the total possible marks (assuming each subject is out of 100)
-                          const totalPossibleMarks = 17; // Change this value if different
-                          // Calculate the percentage
-                          const percentage = (totalMarks * 100) / totalPossibleMarks;
-                          return percentage.toFixed(2) + "%" // Display percentage with 2 decimal places
-                        })()
+                        calculatePercentage(co.marks.A._1a, co.marks.B._2a, co.marks.C._3)
                       }
                       </td>
                       <td>{
-                        (() => {
-                          // Calculate the sum of marks
-                          const totalMarks = parseInt(co.marks.A._1b) + parseInt(co.marks.B._2b) + parseInt(co.marks.C._4);
-                          // Calculate the total possible marks (assuming each subject is out of 100)
-                          const totalPossibleMarks = 17; // Change this value if different
-                          // Calculate the percentage
-                          const percentage = (totalMarks * 100) / totalPossibleMarks;
-                          return percentage.toFixed(2) + "%" // Display percentage with 2 decimal places
-                        })()}
+                        calculatePercentage(co.marks.A._1b, co.marks.B._2b, co.marks.C._4)
+                      }
                       </td>
                       <td>{
-                        (() => {
-                          // Calculate the sum of marks
-                          const totalMarks = parseInt(co.marks.A._1c) + parseInt(co.marks.B._2c) + parseInt(co.marks.C._5);
-                          // Calculate the total possible marks (assuming each subject is out of 100)
-                          const totalPossibleMarks = 17; // Change this value if different
-                          // Calculate the percentage
-                          const percentage = (totalMarks * 100) / totalPossibleMarks;
-                          return percentage.toFixed(2) + "%" // Display percentage with 2 decimal places
-                        })()}
+                        calculatePercentage(co.marks.A._1c, co.marks.B._2c, co.marks.C._5)
+                        }
                       </td>
                       <td>{
-                        (() => {
-                          // Calculate the sum of marks
-                          const totalMarks = parseInt(co.marks.A._1d) + parseInt(co.marks.B._2d) + parseInt(co.marks.C._5);
-                          // Calculate the total possible marks (assuming each subject is out of 100)
-                          const totalPossibleMarks = 17; // Change this value if different
-                          // Calculate the percentage
-                          const percentage = (totalMarks * 100) / totalPossibleMarks;
-                          return percentage.toFixed(2) + "%" // Display percentage with 2 decimal places
-                        })()}
+                        
+                          calculatePercentage(co.marks.A._1d, co.marks.B._2d, co.marks.C._5)
+                          }
                       </td>
                       <td>{
-                        (() => {
-                          // Calculate the sum of marks
-                          const totalMarks = parseInt(co.marks.A._1e) + parseInt(co.marks.B._2e) + parseInt(co.marks.C._5);
-                          // Calculate the total possible marks (assuming each subject is out of 100)
-                          const totalPossibleMarks = 17; // Change this value if different
-                          // Calculate the percentage
-                          const percentage = (totalMarks * 100) / totalPossibleMarks;
-                          return percentage.toFixed(2) + "%" // Display percentage with 2 decimal places
-                        })()}
+                        calculatePercentage(co.marks.A._1e, co.marks.B._2e, co.marks.C._5)
+                        }
                       </td>
                       <td>
                         <button
